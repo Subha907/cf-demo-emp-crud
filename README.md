@@ -1,11 +1,11 @@
 
-setup:
+# setup:
 
-# local Dev setup
+## local Dev setup
 
 Uses H2 database in dev through application.properties (for local dev and testing)
 
-# Cloudfoundry Environment set up for dev and prod
+## Cloudfoundry Environment set up for dev and prod
 
 Uses H2 db (the default one) if dev is activated
 
@@ -15,11 +15,11 @@ Uses external database in prod through environment variables if prod is activate
 # Manifest file to deploy the app to cf env
 Manifest file used in this project has two different configurations dev and prod
 
--- dev
+## dev
 If we want to push the app with dev configuration then use the following command line [specify the app name of dev configuartion]:
 cf push -f manifest.yml employee-management-dev
 
--- prod
+## prod
 If we want to push the app with prod configuration then use the following command line [specify the app name of prod configuartion]:
 cf push -f manifest.yml employee-management-dev
 
