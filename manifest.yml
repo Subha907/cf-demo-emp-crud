@@ -1,0 +1,29 @@
+# Development Environment Configuration
+applications:
+- name: employee-management-dev
+  memory: 1G
+  instances: 1
+  path: target/demoemp-0.0.1-SNAPSHOT.jar
+  buildpacks:
+    - java_buildpack
+  env:
+    SPRING_PROFILES_ACTIVE: dev
+    WELCOME_MESSAGE: Welcome to Cloud Foundry Employee Management System - Development
+    MAX_EMPLOYEES: 5
+
+# Production Environment Configuration    
+- name: employee-management-prod
+  memory: 1G
+  instances: 1
+  path: target/demoemp-0.0.1-SNAPSHOT.jar
+  buildpacks:
+    - java_buildpack
+  env:
+    SPRING_PROFILES_ACTIVE: prod
+    SPRING_DATASOURCE_URL: ${CF_DB_URL}
+    SPRING_DATASOURCE_DRIVER_CLASS_NAME: ${CF_DB_DRIVER}
+    SPRING_DATASOURCE_USERNAME: ${CF_DB_USERNAME}
+    SPRING_DATASOURCE_PASSWORD: ${CF_DB_PASSWORD}
+    SPRING_JPA_PROPERTIES_HIBERNATE_DIALECT: ${CF_DB_DIALECT}
+    WELCOME_MESSAGE: Welcome to Cloud Foundry Employee Management System - Production
+    MAX_EMPLOYEES: 500
