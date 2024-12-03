@@ -21,7 +21,7 @@ cf push -f manifest.yml employee-management-dev
 
 ## prod
 If we want to push the app with prod configuration then use the following command line [specify the app name of prod configuartion]:
-cf push -f manifest.yml employee-management-dev
+cf push -f manifest.yml employee-management-prod
 
 After pushing the app with prod configuration then set the Environment Variables used in the manifest file
 
